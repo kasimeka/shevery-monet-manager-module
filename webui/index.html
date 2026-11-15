@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monet Manager</title>
+<style>
+  body { font-family: sans-serif; margin: 16px; background: #121212; color: #eee; }
+  h1 { font-size: 20px; }
+  .row { display: flex; gap: 8px; margin: 12px 0; align-items: center; flex-wrap: wrap; }
+  button, input[type=text] { font-size: 16px; padding: 10px 14px; border-radius: 12px; border: 0; }
+  button { background: #3a3a3a; color: #eee; }
+  input[type=color] { width: 56px; height: 44px; border: 0; background: none; }
+  input[type=text] { width: 7em; font-family: monospace; }
+  #grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .card { border-radius: 16px; padding: 10px; border: 2px solid transparent; cursor: pointer; }
+  .card.sel { border-color: #fff; }
+  .card .name { font-size: 13px; font-weight: bold; margin-bottom: 8px; }
+  .sw { display: flex; gap: 4px; margin-top: 4px; }
+  .sw span { flex: 1; height: 22px; border-radius: 6px; }
+  .pill { margin-top: 8px; padding: 6px 10px; border-radius: 999px; font-size: 12px; text-align: center; }
+  #warn { display: none; background: #5c2b00; padding: 12px; border-radius: 12px; }
+  pre { background: #1e1e1e; padding: 12px; border-radius: 12px; white-space: pre-wrap; word-break: break-all; }
+</style>
+</head>
+<body>
+<h1>Monet Manager</h1>
+
+<div class="row">
+  <input type="color" id="picker" value="#b388ff">
+  <input type="text" id="hex" value="B388FF" maxlength="7">
+  <button id="wp">Wallpaper color</button>
+</div>
+
+<div id="grid"></div>
+
+<div class="row">
+  <button id="apply">Apply</button>
+  <button id="status">Status</button>
+</div>
+
+<div id="warn">
+  Applying from this page needs <b>Full access</b> in the Shizuku modules screen.
+  Without it, use the module's action button (syncs from wallpaper) or
+  <code>rish -c 'sh /sdcard/monet.sh B388FF TONAL_SPOT'</code>.
+  <div class="row"><button id="grant">Open settings</button></div>
+</div>
+<pre id="out"></pre>
+
+<script src="mcu.js"></script>
+</body>
+</html>

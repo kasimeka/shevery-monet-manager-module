@@ -1,0 +1,20 @@
+{
+  "name": "shevery-monet-manager-module",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Monet Manager: WebUI for a Shizuku/Shevery ADB module that sets the Android Monet seed color.",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "esbuild src/index.ts --bundle --minify --format=iife --target=es2020 --outfile=webui/mcu.js",
+    "dev": "esbuild src/index.ts --bundle --format=iife --target=es2020 --outfile=webui/mcu.js --watch"
+  },
+  "dependencies": {
+    "@material/material-color-utilities": "^0.4.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "typescript": "^5.9.0"
+  }
+}

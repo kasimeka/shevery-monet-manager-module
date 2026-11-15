@@ -1,0 +1,9 @@
+id=monet-manager
+name=Monet Manager
+version=2.0
+versionCode=4
+author=kasimeka
+description=Set the Monet seed color and preview every style, or sync it from the current wallpaper (works around HyperOS wallpaper colors not updating).
+action=action.sh
+webui=webui
+usesShellBridge=true
